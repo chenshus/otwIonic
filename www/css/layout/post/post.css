@@ -1,0 +1,16 @@
+/* --------------------------------------------- New Post --------------------------------------------- */
+
+.newPost {
+    margin: -1px 0 !important;
+}
+
+.post-description{
+    margin-bottom: 7% !important;
+}
+
+.newItemTitle{
+    position: initial !important;
+    float: left !important;
+    margin-top: -5px !important;
+    font-weight: bolder !important;
+}

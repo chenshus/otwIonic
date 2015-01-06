@@ -1,0 +1,11 @@
+<ion-view title="{{navTitle}}">
+    <ion-content>
+        <h1>Feed</h1>
+    </ion-content>
+    <div class="tabs tabs-icon-left">
+        <a ng-repeat="footerTab in footerTabs" class="tab-item" id="{{footerTab.id}}" ng-click="{{footerTab.onClickOpen}}">
+            <i class="icon {{footerTab.icon}}"></i>
+            &nbsp; {{footerTab.value}}
+        </a>
+    </div>
+</ion-view>

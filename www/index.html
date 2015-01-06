@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+
+        <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet">
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+        <link href="css/style.css" rel="stylesheet">
+        <link href="css/feeds/mainFeed/mainFeed.css" rel="stylesheet">
+        <link href="css/layout/menu/menu.css" rel="stylesheet">
+        <link href="css/layout/post/post.css" rel="stylesheet">
+        <link href="css/layout/checkIn/checkIn.css" rel="stylesheet">
+
+
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+
+        <!-- ionic/angularjs js -->
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="js/ng-cordova.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/ngStorage.min.js"></script>
+
+        <!-- facebook login -->
+        <script src="lib/openfb.js"></script>
+
+        <!-- your app's js -->
+        <script src="js/app.module.js"></script>
+        <script src="js/app/blocks/router/router.module.js"></script>
+        <script src="js/app/blocks/router/router-helper.provider.js"></script>
+
+        <!--login -->
+        <script src="js/app/login/login.module.js"></script>
+        <script src="js/app/login/login.controller.js"></script>
+        <script src="js/app/login/login.route.js"></script>
+
+        <!--menu -->
+        <script src="js/app/layout/menu/menu.module.js"></script>
+        <script src="js/app/layout/menu/menu.controller.js"></script>
+        <script src="js/app/layout/menu/menu.route.js"></script>
+
+        <!--profile -->
+        <script src="js/app/profiles/myProfile/myProfile.module.js"></script>
+        <script src="js/app/profiles/myProfile/myProfile.controller.js"></script>
+        <script src="js/app/profiles/myProfile/myProfile.route.js"></script>
+
+        <!--request -->
+        <script src="js/app/requests/myRequests/myRequests.module.js"></script>
+        <script src="js/app/requests/myRequests/myRequests.controller.js"></script>
+        <script src="js/app/requests/myRequests/myRequests.route.js"></script>
+
+        <!--settings -->
+        <script src="js/app/settings/settings.module.js"></script>
+        <script src="js/app/settings/settings.controller.js"></script>
+        <script src="js/app/settings/settings.route.js"></script>
+
+        <!--feed -->
+        <script src="js/app/feeds/mainFeed/mainFeed.module.js"></script>
+        <script src="js/app/feeds/mainFeed/mainFeed.controller.js"></script>
+        <script src="js/app/feeds/mainFeed/mainFeed.route.js"></script>
+
+        <!--deals -->
+        <script src="js/app/deals/pendingDeals/pendingDeals.module.js"></script>
+        <script src="js/app/deals/pendingDeals/pendingDeals.controller.js"></script>
+        <script src="js/app/deals/pendingDeals/pendingDeals.route.js"></script>
+
+        <!--customers -->
+        <script src="js/app/requests/customersRequests/customersRequests.module.js"></script>
+        <script src="js/app/requests/customersRequests/customersRequests.controller.js"></script>
+        <script src="js/app/requests/customersRequests/customersRequests.route.js"></script>
+
+        <!--post -->
+        <script src="js/app/layout/post/post.module.js"></script>
+        <script src="js/app/layout/post/post.controller.js"></script>
+
+        <!--checkIn -->
+        <script src="js/app/layout/checkIn/checkIn.module.js"></script>
+        <script src="js/app/layout/checkIn/checkIn.controller.js"></script>
+    </head>
+
+    <body ng-app="app">
+        <ion-nav-view></ion-nav-view>
+    </body>
+</html>

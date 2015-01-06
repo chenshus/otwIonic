@@ -1,0 +1,21 @@
+.newCheckIn{
+
+}
+
+.checkIn-place, .coming-back-place{
+    border: solid 1px #999999 !important;
+    border-radius: 25px !important;
+    padding: 10px !important;
+}
+
+.checkIn-place{
+    margin-bottom: 3% !important;
+}
+
+.checkIn-description{
+    margin-bottom: 3% !important;
+}
+
+.coming-back-place{
+    margin-bottom: 7% !important;
+}

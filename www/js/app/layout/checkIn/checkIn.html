@@ -1,0 +1,15 @@
+<ion-popover-view ng-controller="CheckIn" class="new-item-popover">
+    <ion-header-bar class="bar bar-header bar-positive">
+        <h1 class="title newItemTitle">New Check-In</h1>
+        <button id="checkIn" class="button button-clear button-primary icon ion-close-circled cancel-button" ng-click="closePopover($event)"></button>
+    </ion-header-bar>
+    <ion-content class="padding newCheckIn">
+        <lable>Check-In at:</lable>
+        <input class="checkIn-place" ng-model="newCheckIn.checkedInPlace" type="text">
+        <lable class="checkIn-description-lable">Check-In Description:</lable>
+        <textarea class="checkIn-description new-item-description" ng-model="newCheckIn.description" type="text" rows="6" cols="5" placeholder="Optional"></textarea>
+        <lable>Coming back to:</lable>
+        <input class="coming-back-place" ng-model="newCheckIn.comingBackPlace" type="text" placeholder="Optional">
+        <button class="button button-full button-positive submit-button" ng-click="createContact(newCheckIn)">Check-In</button>
+    </ion-content>
+</ion-popover-view>

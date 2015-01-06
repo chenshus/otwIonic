@@ -1,0 +1,41 @@
+/* Empty. Add your own CSS if you like */
+/* If there are some CSS rules on Popups/Popovers they must include '!important' */
+
+/* --------------------------------------------- New Popover Layout --------------------------------------------- */
+
+/* popover rule */
+.bar-header{
+    border-radius: 0 !important;
+}
+
+/* popover rule */
+
+.submit-button{
+    font-family: cursive !important;
+}
+
+.new-item-popover{
+    opacity: 1 !important;
+    top: 23.5% !important;
+    margin-left: -36.5% !important;
+    height: 63% !important;
+    width: 75% !important;
+    left: 49% !important;
+}
+
+.new-item-description{
+    border: solid 1px #999999 !important;
+    border-radius: 25px !important;
+    padding: 10px !important;
+    resize: none !important;
+}
+
+.platform-ios .new-item-popover{
+    opacity: 1 !important;
+    top: 11.3% !important;
+    margin-left: -36.5% !important;
+    height: 82% !important;
+    width: 75% !important;
+    left: 49% !important;
+}
+
