@@ -19,7 +19,8 @@
         'app.mainFeed.checkIn',
         'app.customersRequests',
         'app.pendingDeals',
-        'app.layout'
+        'app.layout',
+        'app.widgets'
     ])
     .config(function() {
             openFB.init({appId: '1516190191974288'});

@@ -1,15 +1,17 @@
-<ion-popover-view ng-controller="CheckIn" class="new-item-popover">
+<ion-popover-view ng-controller="CheckIn as vm" class="new-item-popover">
     <ion-header-bar class="bar bar-header bar-positive">
         <h1 class="title newItemTitle">New Check-In</h1>
         <button id="checkIn" class="button button-clear button-primary icon ion-close-circled cancel-button" ng-click="closePopover($event)"></button>
     </ion-header-bar>
     <ion-content class="padding newCheckIn">
+        <div>
         <lable>Check-In at:</lable>
-        <input class="checkIn-place" ng-model="newCheckIn.checkedInPlace" type="text">
+        <input class="checkIn-place" ng-autocomplete  ng-model="vm.currentLocation" type="text" googleplace="">
+            </div>
         <lable class="checkIn-description-lable">Check-In Description:</lable>
         <textarea class="checkIn-description new-item-description" ng-model="newCheckIn.description" type="text" rows="6" cols="5" placeholder="Optional"></textarea>
         <lable>Coming back to:</lable>
-        <input class="coming-back-place" ng-model="newCheckIn.comingBackPlace" type="text" placeholder="Optional">
-        <button class="button button-full button-positive submit-button" ng-click="createContact(newCheckIn)">Check-In</button>
+        <input class="coming-back-place"  ng-model="vm.ComingBackLocation"  type="text"  placeholder="Optional" googleplace="">
+        <button class="button button-full button-positive submit-button" ng-click="vm.UserCheckIn()">Check-In</button>
     </ion-content>
 </ion-popover-view>
