@@ -4,7 +4,7 @@
         .module('app.mainFeed.checkIn')
         .controller('CheckIn', CheckIn);
 
-    function CheckIn( $state) {
+    function CheckIn($state) {
 
         var vm=this;
         vm.currentLocation="";
@@ -57,8 +57,6 @@
                         vm.currentLocation =  vm.currentLocation +"," +state;
                     }
                 }
-
-
 
             });
         }

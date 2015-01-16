@@ -5,7 +5,7 @@
         .controller('MainFeed', MainFeed);
 
     function MainFeed( $scope,$ionicPopover) {
-        $scope.navTitle = '<span> <i class="icon ion-social-rss">&nbsp; Feed</i></span>';
+        $scope.navTitle = '<span> <i class="icon ion-social-rss">&nbsp; Feed</i></span> <notifications></notifications>';
 
         $scope.footerTabs = [
             {"value":"Post","id":"post", "icon":"ion-android-textsms", "onClickOpen":"openPopover($event)"},
