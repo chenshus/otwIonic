@@ -1,5 +1,6 @@
 <ion-view title="{{navTitle}}">
     <ion-content>
+        <main-feed-notifications></main-feed-notifications>
         <h1>Feed</h1>
         <input class="checkIn-place" ng-autocomplete  ng-model="currentLocation" type="text" googleplace="">
     </ion-content>
@@ -8,6 +9,5 @@
             <i class="icon {{footerTab.icon}}"></i>
             &nbsp; {{footerTab.value}}
         </a>
-
     </div>
 </ion-view>

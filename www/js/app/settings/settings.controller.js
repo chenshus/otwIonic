@@ -4,7 +4,8 @@
         .module('app.settings')
         .controller('Settings', Settings);
 
-    function Settings($scope,$state) {
+    function Settings($scope) {
+
         $scope.navTitle = '<span> <i class="icon ion-gear-b">&nbsp; Settings</i></span>';
     }
 })();

@@ -39,3 +39,6 @@
     left: 49% !important;
 }
 
+.badge{
+    margin-top: -1px;
+}

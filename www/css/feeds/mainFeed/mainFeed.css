@@ -62,3 +62,11 @@
 .title .title-center .header-item{
     text-align: -webkit-center;
 }
+
+main-feed-notifications{
+    padding-left: 96%;
+}
+
+.ion-ios-pulse-strong{
+    font-size: 222%;
+}
