@@ -7,11 +7,17 @@
         <div>
         <lable>Check-In at:</lable>
         <input class="checkIn-place" ng-autocomplete  ng-model="vm.currentLocation" type="text" googleplace="">
-            </div>
+        </div>
         <lable class="checkIn-description-lable">Check-In Description:</lable>
         <textarea class="checkIn-description new-item-description" ng-model="newCheckIn.description" type="text" rows="6" cols="5" placeholder="Optional"></textarea>
         <lable>Coming back to:</lable>
         <input class="coming-back-place"  ng-model="vm.ComingBackLocation"  type="text"  placeholder="Optional" googleplace="">
+        <label class="item item-input coming-back-date">
+            <span class="input-label">Date</span>
+            <input type="date">
+        </label>
+
         <button class="button button-full button-positive submit-button" ng-click="vm.UserCheckIn()">Check-In</button>
+
     </ion-content>
 </ion-popover-view>

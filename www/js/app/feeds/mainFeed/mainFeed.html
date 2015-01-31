@@ -1,8 +1,12 @@
 <ion-view title="{{navTitle}}">
     <ion-content>
+
         <main-feed-notifications></main-feed-notifications>
         <h1>Feed</h1>
         <input class="checkIn-place" ng-autocomplete  ng-model="currentLocation" type="text" googleplace="">
+
+        <main-feed-items></main-feed-items>
+
     </ion-content>
     <div class="tabs tabs-icon-left">
         <a ng-repeat="footerTab in footerTabs" class="tab-item" id="{{footerTab.id}}" ng-click="{{footerTab.onClickOpen}}">

@@ -9,5 +9,6 @@
             alert(newPost.description);
         }
     }
+
 })();
 

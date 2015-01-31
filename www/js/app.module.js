@@ -14,6 +14,7 @@
         'app.myProfile',
         'app.settings',
         'app.myRequests',
+        'app.mainFeedItems',
         'app.mainFeed',
         'app.mainFeed.post',
         'app.mainFeed.checkIn',

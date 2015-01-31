@@ -2,7 +2,7 @@
 
 }
 
-.checkIn-place, .coming-back-place{
+.checkIn-place, .coming-back-place, .coming-back-date{
     border: solid 1px #999999 !important;
     border-radius: 25px !important;
     padding: 10px !important;
@@ -17,5 +17,9 @@
 }
 
 .coming-back-place{
-    margin-bottom: 7% !important;
+    margin-bottom: 2% !important;
+}
+
+.coming-back-date{
+    margin-bottom: 4%;
 }

@@ -1,0 +1,13 @@
+<ion-list>
+    <ion-item ng-repeat="item in items" class="item-thumbnail-left">
+        Item {{ item.id }}
+        <ion-option-button class="button-positive"
+                           ng-click="share(item)">
+            Share
+        </ion-option-button>
+        <ion-option-button class="button-info"
+                           ng-click="edit(item)">
+            Edit
+        </ion-option-button>
+    </ion-item>
+</ion-list>
