@@ -10,7 +10,8 @@
     angular.module('app', [
         'ionic',
         'blocks.router',
-        'login',
+        'app.login',
+        'app.core',
         'app.myProfile',
         'app.settings',
         'app.myRequests',
@@ -21,7 +22,8 @@
         'app.customersRequests',
         'app.pendingDeals',
         'app.layout',
-        'app.widgets'
+        'app.widgets',
+        'btford.socket-io'
     ])
     .config(function() {
             openFB.init({appId: '1516190191974288'});

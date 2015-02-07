@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('login')
+        .module('app.login')
         .run(appRun);
 
     function appRun(routerHelper) {

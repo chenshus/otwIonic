@@ -1,5 +1,5 @@
 (function() {
     'use strict';
 
-    angular.module('login',['ionic']);
+    angular.module('app.login',['ionic']);
 })();
