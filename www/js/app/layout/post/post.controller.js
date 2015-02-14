@@ -1,12 +1,24 @@
 (function() {
 
     angular
-        .module('app.mainFeed.post')
+        .module('app.post')
         .controller('Post', Post);
 
-    function Post($scope, $state) {
-        $scope.createPost = function(newPost){
-            alert(newPost.description);
+    function Post(postService,$rootScope,postPopover){
+
+        var vm= this;
+
+        vm.closePopover =function(){
+            postPopover.Popover.hide();
+
+        };
+
+        vm.createPost = function(newPost){
+
+            postService.PostNewFeed(newPost);
+            $rootScope.$emit('newPost',newPost);
+            vm.closePopover();
+            newPost.description='';
         }
     }
 

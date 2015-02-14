@@ -1,7 +1,7 @@
 <ion-popover-view ng-controller="CheckIn as vm" class="new-item-popover">
     <ion-header-bar class="bar bar-header bar-positive">
         <h1 class="title newItemTitle">New Check-In</h1>
-        <button id="checkIn" class="button button-clear button-primary icon ion-close-circled cancel-button" ng-click="closePopover($event)"></button>
+        <button id="checkIn" class="button button-clear button-primary icon ion-close-circled cancel-button" ng-click="vm.closePopover()"></button>
     </ion-header-bar>
     <ion-content class="padding newCheckIn">
         <div>

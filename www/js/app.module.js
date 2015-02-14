@@ -9,6 +9,7 @@
 
     angular.module('app', [
         'ionic',
+        'ngResource',
         'blocks.router',
         'app.login',
         'app.core',
@@ -17,7 +18,7 @@
         'app.myRequests',
         'app.mainFeedItems',
         'app.mainFeed',
-        'app.mainFeed.post',
+        'app.post',
         'app.mainFeed.checkIn',
         'app.customersRequests',
         'app.pendingDeals',

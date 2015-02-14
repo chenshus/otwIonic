@@ -5,7 +5,7 @@
         .controller('Login', Login);
 
     function Login( $scope, $state,loginService) {
-        loginService.SignIn("1");
+
         $scope.doLogin = function(loginData) {
             loginService.SignIn("1");
 
@@ -13,12 +13,7 @@
             $state.go('app.myProfile');
         };
 
-        function successHandler(response){
-            console.log(response)
-        }
-        function errorHandler(response){
-            console.log(response)
-        }
+
         $scope.fbLogin = function() {
 
             openFB.login(
@@ -33,6 +28,7 @@
                 },
                 {scope: 'email,publish_actions'}
             );
+            openFB.api({path: '/me/friends', success: successHandler, error: errorHandler});
         }
     }
 })();
