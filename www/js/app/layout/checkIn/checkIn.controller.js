@@ -4,23 +4,14 @@
         .module('app.mainFeed.checkIn')
         .controller('CheckIn', CheckIn);
 
-<<<<<<< HEAD
     function CheckIn($state, checkInModal) {
-=======
-    function CheckIn($state,checkInPopover) {
->>>>>>> 8ca236f789129bebcf49d8448f298e6cdd76c588
 
         var vm=this;
         vm.currentLocation="";
         vm.ComingBackLocation ="";
 
-<<<<<<< HEAD
         vm.closeModal =function(){
             checkInModal.Modal.hide()
-=======
-        vm.closePopover =function(){
-            checkInPopover.Popover.hide()
->>>>>>> 8ca236f789129bebcf49d8448f298e6cdd76c588
         };
 
 
