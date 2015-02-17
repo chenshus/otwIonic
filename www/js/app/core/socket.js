@@ -9,6 +9,7 @@
     function Socket(Const,$rootScope,socketFactory){
 
        var socket = io.connect(Const.ServerUrl);
+
        var factory= socketFactory({
            ioSocket :socket
        });

@@ -9,6 +9,7 @@
 
     angular.module('app', [
         'ionic',
+        'ngResource',
         'blocks.router',
         'app.login',
         'app.core',
@@ -17,13 +18,14 @@
         'app.myRequests',
         'app.mainFeedItems',
         'app.mainFeed',
-        'app.mainFeed.post',
+        'app.post',
         'app.mainFeed.checkIn',
         'app.customersRequests',
         'app.pendingDeals',
         'app.layout',
         'app.widgets',
-        'btford.socket-io'
+        'btford.socket-io',
+        'ngCordova.plugins.facebook'
     ])
     .config(function() {
             openFB.init({appId: '1516190191974288'});

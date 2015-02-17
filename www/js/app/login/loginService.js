@@ -9,13 +9,6 @@
 
     function loginService($http,Const,Socket){
 
-        Socket.on('something',function (data){
-            console.log(data);
-            Socket.emit('helo', 'thanks!');
-        });
-
-
-
         var url = Const.ServerUrl;
 
         var Service ={
@@ -30,7 +23,7 @@
                     console.log("hi lok ar"+data)
                 })
                 .catch(function(message){
-
+                    console.log(message);
                 })
         }
 

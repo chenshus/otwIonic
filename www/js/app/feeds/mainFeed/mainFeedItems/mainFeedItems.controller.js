@@ -4,24 +4,30 @@
         .module('app.mainFeedItems')
         .controller('MainFeedItems', MainFeedItems);
 
-    function MainFeedItems($scope) {
+    function MainFeedItems($rootScope,Socket) {
 
+        var vm = this;
         // TODO: neeede to be changed - fetch from DB
-            $scope.items = [
-                { id: 46 },
-                { id: 47 },
-                { id: 48 },
-                { id: 49 },
-                { id: 50 }
-            ];
+        vm.items = [
+        ];
+
+
+        $rootScope.$on('newPost',function(e,newpost){
+            vm.items.splice(0, 0, newpost.description);
+        });
+
+        Socket.on('newFeed',function (data){
+            vm.items.push(data.description);
+
+        });
 
         // TODO: change functions!
-            $scope.edit = function(item) {
-                alert('Edit Item: ' + item.id);
-            };
-            $scope.share = function(item) {
-                alert('Share Item: ' + item.id);
-            };
+        vm.edit = function(item) {
+            alert('Edit Item: ' + item.id);
+        };
+        vm.share = function(item) {
+            alert('Share Item: ' + item.id);
+        };
 
     }
 })();

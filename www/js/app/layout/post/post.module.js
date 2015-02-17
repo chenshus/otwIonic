@@ -1,6 +1,6 @@
 (function() {
     'use strict';
 
-    angular.module('app.mainFeed.post',['ionic']);
+    angular.module('app.post',['ionic']);
 })();
 

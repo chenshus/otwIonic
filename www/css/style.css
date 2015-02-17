@@ -14,14 +14,14 @@
     font-family: cursive !important;
 }
 
-.new-item-popover{
-    opacity: 1 !important;
-    top: 23.5% !important;
-    margin-left: -36.5% !important;
-    height: 63% !important;
-    width: 75% !important;
-    left: 49% !important;
-}
+/*.new-item-modal{*/
+    /*opacity: 1 !important;*/
+    /*top: 23.5% !important;*/
+    /*margin-left: -36.5% !important;*/
+    /*height: 63% !important;*/
+    /*width: 75% !important;*/
+    /*left: 49% !important;*/
+/*}*/
 
 .new-item-description{
     border: solid 1px #999999 !important;
@@ -30,15 +30,23 @@
     resize: none !important;
 }
 
-.platform-ios .new-item-popover{
-    opacity: 1 !important;
-    top: 11.3% !important;
-    margin-left: -36.5% !important;
-    height: 82% !important;
-    width: 75% !important;
-    left: 49% !important;
-}
+/*.platform-ios .new-item-modal{*/
+    /*opacity: 1 !important;*/
+    /*top: 11.3% !important;*/
+    /*margin-left: -36.5% !important;*/
+    /*height: 82% !important;*/
+    /*width: 75% !important;*/
+    /*left: 49% !important;*/
+/*}*/
 
 .badge{
     margin-top: -1px;
+}
+
+.modal{
+    top: 0 ;
+    bottom: 0 ;
+    left: 0 ;
+    right: 0 ;
+    width: 100% ;
 }

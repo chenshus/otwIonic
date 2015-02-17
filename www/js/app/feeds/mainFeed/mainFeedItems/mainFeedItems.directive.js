@@ -8,7 +8,9 @@
                 scope : {},
                 restrict: 'E',
                 templateUrl: 'js/app/feeds/mainFeed/mainFeedItems/mainFeedItems.html',
-                controller: 'MainFeedItems'
+                controller: 'MainFeedItems',
+                controllerAs: 'vm'
+
             };
         });
 })();

@@ -4,12 +4,15 @@
         .module('app.mainFeed.checkIn')
         .controller('CheckIn', CheckIn);
 
-    function CheckIn($state) {
+    function CheckIn($state, checkInModal) {
 
         var vm=this;
         vm.currentLocation="";
         vm.ComingBackLocation ="";
 
+        vm.closeModal =function(){
+            checkInModal.Modal.hide()
+        };
 
 
         vm.UserCheckIn =function (){
@@ -34,7 +37,7 @@
 
         navigator.geolocation.getCurrentPosition(sucsess2,Geoerror);
 
-            function sucsess2 (pos) {
+        function sucsess2 (pos) {
             var geocoder = new google.maps.Geocoder();
             var lat = pos.coords.latitude;
             var lng = pos.coords.longitude;
