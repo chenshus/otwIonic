@@ -25,11 +25,9 @@
         'app.layout',
         'app.widgets',
         'btford.socket-io',
-        'ngCordova.plugins.facebook'
+        'ngCordova.plugins.facebook',
+        'ngStorage'
     ])
-    .config(function() {
-            openFB.init({appId: '1516190191974288'});
-        })
 
     .run(function($ionicPlatform){
             $ionicPlatform.ready(function () {
