@@ -17,8 +17,13 @@
             {name:'post', ModalService :postModal},
             {name:'checkIn', ModalService :checkInModal}
         ];
+<<<<<<< Updated upstream
         modals.forEach(function(modal){
             modal.ModalService.InitializeModal($scope);
+=======
+        popovers.forEach(function(popover){
+            popover.PopoverService.InitializePopover();
+>>>>>>> Stashed changes
         });
 
 

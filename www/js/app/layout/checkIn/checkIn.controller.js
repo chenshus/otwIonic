@@ -4,7 +4,11 @@
         .module('app.mainFeed.checkIn')
         .controller('CheckIn', CheckIn);
 
+<<<<<<< Updated upstream
     function CheckIn($state, checkInModal) {
+=======
+    function CheckIn(checkInPopover,$scope) {
+>>>>>>> Stashed changes
 
         var vm=this;
         vm.currentLocation="";

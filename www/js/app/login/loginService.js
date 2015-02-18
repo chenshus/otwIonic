@@ -18,7 +18,7 @@
 
         function SignIn (userId){
 
-            return $http.get(url+'Sign_In')
+            return $http.post(url+'Sign_In')
                 .then(function(data){
                     console.log("hi lok ar"+data)
                 })

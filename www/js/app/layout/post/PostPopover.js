@@ -19,8 +19,7 @@
         function InitializePopover (scope){
             $ionicPopover.fromTemplateUrl('js/app/layout/post/post.html', {
                 id: 'post',
-                backdropClickToClose: false,
-                scope:scope
+                backdropClickToClose: false
             }).then(function(popover) {
                 Server.Popover =popover;
 

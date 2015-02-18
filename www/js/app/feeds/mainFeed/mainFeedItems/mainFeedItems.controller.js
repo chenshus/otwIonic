@@ -4,9 +4,10 @@
         .module('app.mainFeedItems')
         .controller('MainFeedItems', MainFeedItems);
 
-    function MainFeedItems($rootScope,Socket) {
+    function MainFeedItems($rootScope,Socket,mainFeedItemsService) {
 
         var vm = this;
+        mainFeedItemsService.GetFeeds();
         // TODO: neeede to be changed - fetch from DB
         vm.items = [
         ];

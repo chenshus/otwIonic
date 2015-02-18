@@ -15,11 +15,10 @@
 
         return Server;
 
-        function InitializePopover (scope){
+        function InitializePopover (){
             $ionicPopover.fromTemplateUrl('js/app/layout/checkIn/checkIn.html', {
                 id: 'post',
-                backdropClickToClose: false,
-                scope:scope
+                backdropClickToClose: false
             }).then(function(popover) {
                 Server.Popover =popover;
 
