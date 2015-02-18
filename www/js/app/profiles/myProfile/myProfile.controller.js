@@ -4,9 +4,9 @@
         .module('app.myProfile')
         .controller('MyProfile', MyProfile);
 
-    function MyProfile($scope, $state, Socket, $cordovaFacebook, $rootScope) {
+    function MyProfile($scope, $state, Socket, $cordovaFacebook, $rootScope, $localStorage) {
         $scope.section = 'MyProfile';
-        $scope.userid = $rootScope.userID;
+        $scope.userid = $localStorage.loginCerdinals.userID;
 
         $scope.navTitle = '<span> <i class="icon ion-person">&nbsp; My Profile</i></span>';
 
