@@ -4,20 +4,86 @@
         <button id="checkIn" class="button button-clear button-primary icon ion-close-circled cancel-button" ng-click="vm.closeModal()"></button>
     </ion-header-bar>
     <ion-content class="padding newCheckIn">
-        <div>
-        <lable>Check-In at:</lable>
-        <input class="checkIn-place" ng-autocomplete  ng-model="vm.currentLocation" type="text" googleplace="">
-        </div>
-        <lable class="checkIn-description-lable">Check-In Description:</lable>
-        <textarea class="checkIn-description new-item-description" ng-model="newCheckIn.description" type="text" rows="6" cols="5" placeholder="Optional"></textarea>
-        <lable>Coming back to:</lable>
-        <input class="coming-back-place"  ng-model="vm.ComingBackLocation"  type="text"  placeholder="Optional" googleplace="">
-        <label class="item item-input coming-back-date">
-            <span class="input-label">Date</span>
-            <input type="date">
-        </label>
+
+        <md-content class="md-padding">
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Check-In at</label>
+                        <input class="checkIn-place my" ng-autocomplete  ng-model="vm.currentLocation" googleplace="" placeholder="" ng-blur="vm.fieldBlurred($event)">
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Coming back To - Optional</label>
+                    <input class="coming-back-place my" ng-model="vm.comingBackLocation" googleplace="" ng-blur="vm.fieldBlurred($event)" placeholder="">
+                </md-input-container>
+                <md-input-container flex class="coming-back-date-container">
+                    <label>Coming back Date - Optional</label>
+                    <input class="coming-back-date my" type="date" min="{{vm.minComingBackDate}}" ng-model="vm.comingBackDate" ng-blur="vm.fieldBlurred($event)">
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label>Check-In Description - Optional</label>
+                    <textarea class="checkIn-description new-item-description my" ng-model="vm.description" columns="5" md-maxlength="300" ng-blur="vm.fieldBlurred($event)"></textarea>
+                </md-input-container>
+            </div>
+        </md-content>
 
         <button class="button button-full button-positive submit-button" ng-click="vm.UserCheckIn()">Check-In</button>
 
     </ion-content>
 </ion-modal-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<div>-->
+<!--<lable>Check-In at:</lable>-->
+<!--<input class="checkIn-place" ng-autocomplete  ng-model="vm.currentLocation" type="text" googleplace="">-->
+<!--</div>-->
+<!--<lable class="checkIn-description-lable">Check-In Description:</lable>-->
+<!--<textarea class="checkIn-description new-item-description" ng-model="newCheckIn.description" type="text" rows="6" cols="5" placeholder="Optional"></textarea>-->
+<!--<lable>Coming back to:</lable>-->
+<!--<input class="coming-back-place"  ng-model="vm.ComingBackLocation"  type="text"  placeholder="Optional" googleplace="">-->
+<!--<label class="item item-input coming-back-date">-->
+<!--<span class="input-label">Date</span>-->
+<!--<input type="date">-->
+<!--</label>-->

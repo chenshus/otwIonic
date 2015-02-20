@@ -26,7 +26,8 @@
         'app.widgets',
         'btford.socket-io',
         'ngCordova.plugins.facebook',
-        'ngStorage'
+        'ngStorage',
+        'ngMaterial'
     ])
 
     .run(function($ionicPlatform){

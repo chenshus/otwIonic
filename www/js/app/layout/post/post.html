@@ -4,8 +4,38 @@
         <button id="post" class="button button-clear button-primary icon ion-close-circled cancel-button" ng-click="vm.closeModal()"></button>
     </ion-header-bar>
         <ion-content class="padding newPost">
-            <lable>Post Content:</lable>
-            <textarea class="post-description new-item-description" ng-model="newPost.description" type="text" rows="14" cols="5"></textarea>
-            <button class="button button-full button-positive submit-button" ng-click="vm.createPost(newPost)">Submit Post</button>
+
+            <md-content class="md-padding">
+                <div layout layout-sm="column">
+                    <md-input-container flex>
+                        <label>Post Content</label>
+                        <textarea class="post-description" ng-model="vm.description" columns="5" md-maxlength="300" ng-blur="vm.fieldBlurred($event)"></textarea>
+                    </md-input-container>
+                </div>
+            </md-content>
+            <button class="button button-full button-positive submit-button" ng-click="vm.createPost()">Submit Post</button>
         </ion-content>
 </ion-modal-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <lable>Post Content:</lable>
+    <textarea class="post-description new-item-description" ng-model="newPost.description" type="text" rows="14" cols="5"></textarea> -->

@@ -40,8 +40,23 @@
 
         // Execute action on hide popover
         $scope.$on('modal.hidden', function() {
-            // Execute action
+//            var allInputs = angular.element(document.querySelectorAll('md-input-container input'));
+//            var allTextareas = angular.element(document.querySelectorAll('md-input-container textarea'));
+//            $scope.clearModalsFields(allInputs);
+//            $scope.clearModalsFields(allTextareas);
         });
+
+//        $scope.clearModalsFields = function(fields){
+//            if(fields.length > 0){
+//                angular.forEach(fields, function(element){
+//                    if(element.value != '') {
+//                        element.value = '';
+//                        element.parentElement.removeAttribute('class', 'md-input-has-value');
+//                    }
+//                });
+//            }
+//        };
+
         // Execute action on remove popover
         $scope.$on('modal.removed', function() {
             // Execute action
