@@ -2,24 +2,32 @@
 
 }
 
-.checkIn-place, .coming-back-place, .coming-back-date{
-    border: solid 1px #999999 !important;
-    border-radius: 25px !important;
-    padding: 10px !important;
+/*.checkIn-place, .coming-back-place, .coming-back-date{*/
+    /*border: solid 1px #999999 !important;*/
+    /*border-radius: 25px !important;*/
+    /*padding: 10px !important;*/
+/*}*/
+
+/*.checkIn-place{*/
+    /*margin-bottom: 3% !important;*/
+/*}*/
+
+/*.checkIn-description{*/
+    /*margin-bottom: 3% !important;*/
+/*}*/
+
+/*.coming-back-place{*/
+    /*margin-bottom: 2% !important;*/
+/*}*/
+
+/*.coming-back-date{*/
+    /*margin-bottom: 4%;*/
+/*}*/
+
+.coming-back-date-container {
+    margin-right: 50%;
 }
 
-.checkIn-place{
-    margin-bottom: 3% !important;
-}
-
-.checkIn-description{
-    margin-bottom: 3% !important;
-}
-
-.coming-back-place{
-    margin-bottom: 2% !important;
-}
-
-.coming-back-date{
-    margin-bottom: 4%;
+.coming-back-place, .checkIn-place, .coming-back-date, .checkIn-description, input[type="date"]  {
+    border-bottom: solid;
 }

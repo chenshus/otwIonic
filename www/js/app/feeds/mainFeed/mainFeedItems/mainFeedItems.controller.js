@@ -4,17 +4,20 @@
         .module('app.mainFeedItems')
         .controller('MainFeedItems', MainFeedItems);
 
-    function MainFeedItems($rootScope,Socket,mainFeedItemsService) {
+    function MainFeedItems($rootScope,Socket) {
 
         var vm = this;
-        mainFeedItemsService.GetFeeds();
-        // TODO: neeede to be changed - fetch from DB
+        // TODO: needed to be changed - fetch from DB
         vm.items = [
         ];
 
 
-        $rootScope.$on('newPost',function(e,newpost){
-            vm.items.splice(0, 0, newpost.description);
+        $rootScope.$on('newCheckIn', function(e, newCheckIn){
+            vm.items.splice(0, 0, newCheckIn.description);
+        });
+
+        $rootScope.$on('newPost',function(e,newPost){
+            vm.items.splice(0, 0, newPost.description);
         });
 
         Socket.on('newFeed',function (data){

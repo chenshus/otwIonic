@@ -4,26 +4,55 @@
         .module('app.mainFeed.checkIn')
         .controller('CheckIn', CheckIn);
 
-<<<<<<< Updated upstream
-    function CheckIn($state, checkInModal) {
-=======
-    function CheckIn(checkInPopover,$scope) {
->>>>>>> Stashed changes
+    function CheckIn($state, checkInModal, $rootScope) {
 
         var vm=this;
-        vm.currentLocation="";
-        vm.ComingBackLocation ="";
+        vm.currentLocation = "";
+        vm.ComingBackLocation = "";
+        vm.comingBackDate = "";
+        vm.description = "";
+
+        Date.prototype.toDateInputValue = (function() {
+            var local = new Date(this);
+            local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+            return local.toJSON().slice(0,10);
+        });
+
+        vm.minComingBackDate = new Date().toDateInputValue();
+
+        vm.fieldBlurred = function($event){
+            var currentElement = angular.element($event.target);
+            if(currentElement.val() == '') {
+                currentElement.parent().removeClass('md-input-has-value');
+            }
+        };
 
         vm.closeModal =function(){
+            vm.clearFields();
             checkInModal.Modal.hide()
         };
 
-
         vm.UserCheckIn =function (){
-            console.log(vm.currentLocation);
-            console.log(vm.ComingBackLocation);
+            if(angular.element(document.querySelectorAll('[aria-invalid=true]')).length == 0){
+                var newCheckIn = {
+                    'description' : vm.description,
+                    'comingBackDate' : vm.comingBackDate,
+                    'comingBackLocation' : vm.ComingBackLocation,
+                    'currentLocation' : vm.currentLocation
+                };
+                $rootScope.$emit('newCheckIn', newCheckIn);
+                vm.closeModal();
+            }
         };
 
+        vm.clearFields = function(){
+            vm.description = '';
+            setTimeout(function() {
+                angular.element(document.querySelectorAll('[class*=description]')).parent().find('div')[0].innerText = '';
+            }, 0.10);
+            vm.comingBackDate = '';
+            vm.comingBackLocation = '';
+        };
 
         function success(pos) {
             var crd = pos.coords;

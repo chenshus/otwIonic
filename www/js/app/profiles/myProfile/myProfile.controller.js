@@ -6,7 +6,13 @@
 
     function MyProfile($scope, $state, Socket, $cordovaFacebook, $rootScope, $localStorage) {
         $scope.section = 'MyProfile';
-        $scope.userid = $localStorage.loginCerdinals.userID;
+
+        (function(){
+            if($localStorage.loginCerdinals != null){
+                $scope.userid = $localStorage.loginCerdinals.userID;
+            }
+        })();
+
 
         $scope.navTitle = '<span> <i class="icon ion-person">&nbsp; My Profile</i></span>';
 
