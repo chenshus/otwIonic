@@ -13,12 +13,12 @@
                     <md-autocomplete
                             ng-disabled="true"
                             md-no-cache="false"
-                            md-selected-item="vm.currentLocation.formatted_address"
-                            md-search-text="vm.currentLocation"
-                            md-items="item in vm.GetPlace(vm.currentLocation)"
+                            md-selected-item="vm.currentLocation"
+                            md-search-text="vm.searchCurrentLocationText"
+                            md-items="item in vm.GetPlace(vm.searchCurrentLocationText)"
                             md-item-text="item.formatted_address"
                             placeholder="Check-In at">
-                        <span md-highlight-text="vm.currentLocation">{{item.formatted_address}}</span>
+                        <span md-highlight-text="vm.searchCurrentLocationText">{{item.formatted_address}}</span>
                 </md-input-container>
             </div>
             <div layout layout-sm="column">
@@ -33,12 +33,12 @@
                     <md-autocomplete
                             ng-disabled="true"
                             md-no-cache="false"
-                            md-selected-item="vm.comingBackLocation.formatted_address"
-                            md-search-text="vm.comingBackLocation"
-                            md-items="item in vm.GetPlace(vm.comingBackLocation)"
+                            md-selected-item="vm.comingBackLocation"
+                            md-search-text="vm.searchComingBackLocationText"
+                            md-items="item in vm.GetPlace(vm.searchComingBackLocationText)"
                             md-item-text="item.formatted_address"
                             placeholder="Coming back To - Optional">
-                        <span md-highlight-text="vm.comingBackLocation">{{item.formatted_address}}</span>
+                        <span md-highlight-text="vm.searchComingBackLocationText">{{item.formatted_address}}</span>
                     </md-autocomplete>
                 </md-input-container>
                 <md-input-container flex class="coming-back-date-container">

@@ -13,8 +13,8 @@
         vm.description = "";
         vm.autocompleteValues =[];
         vm.selectedItem  = null;
-        vm.searchText    = null;
-
+        vm.searchTextComingBackLocation    = null;
+        vm.searchComingBackLocationText =null;
         vm.simulateQuery = false;
 
         Date.prototype.toDateInputValue = (function() {
@@ -103,7 +103,7 @@
                     }
                     if (ac.types.indexOf('country') >= 0) {
                         state = ac.short_name;
-                        vm.currentLocation.formatted_address =  vm.currentLocation +"," +state;
+                        vm.currentLocation =  vm.currentLocation +"," +state;
                     }
                 }
 
