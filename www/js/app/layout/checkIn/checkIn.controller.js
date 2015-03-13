@@ -4,13 +4,18 @@
         .module('app.mainFeed.checkIn')
         .controller('CheckIn', CheckIn);
 
-    function CheckIn($state, checkInModal, $rootScope) {
+    function CheckIn($http, checkInModal, $rootScope) {
 
         var vm=this;
         vm.currentLocation = "";
         vm.ComingBackLocation = "";
         vm.comingBackDate = "";
         vm.description = "";
+        vm.autocompleteValues =[];
+        vm.selectedItem  = null;
+        vm.searchText    = null;
+
+        vm.simulateQuery = false;
 
         Date.prototype.toDateInputValue = (function() {
             var local = new Date(this);
@@ -20,6 +25,14 @@
 
         vm.minComingBackDate = new Date().toDateInputValue();
 
+
+        vm.GetPlace = function(value){
+            var params = {address: value, sensor: false};
+            return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {params: params})
+                .then(function(res) {
+                    return res.data.results;
+                });
+        };
         vm.fieldBlurred = function($event){
             var currentElement = angular.element($event.target);
             if(currentElement.val() == '') {
@@ -90,7 +103,7 @@
                     }
                     if (ac.types.indexOf('country') >= 0) {
                         state = ac.short_name;
-                        vm.currentLocation =  vm.currentLocation +"," +state;
+                        vm.currentLocation.formatted_address =  vm.currentLocation +"," +state;
                     }
                 }
 

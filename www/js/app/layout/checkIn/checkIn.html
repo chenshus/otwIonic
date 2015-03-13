@@ -9,13 +9,37 @@
             <div layout layout-sm="column">
                 <md-input-container flex>
                     <label>Check-In at</label>
-                        <input class="checkIn-place my" ng-autocomplete  ng-model="vm.currentLocation" googleplace="" placeholder="" ng-blur="vm.fieldBlurred($event)">
+                      <!--  <input   class="checkIn-place my" ng-autocomplete  ng-model="vm.currentLocation" googleplace="" placeholder="" ng-blur="vm.fieldBlurred($event)">-->
+                    <md-autocomplete
+                            ng-disabled="true"
+                            md-no-cache="false"
+                            md-selected-item="vm.currentLocation.formatted_address"
+                            md-search-text="vm.currentLocation"
+                            md-items="item in vm.GetPlace(vm.currentLocation)"
+                            md-item-text="item.formatted_address"
+                            placeholder="Check-In at">
+                        <span md-highlight-text="vm.currentLocation">{{item.formatted_address}}</span>
                 </md-input-container>
             </div>
             <div layout layout-sm="column">
+
                 <md-input-container flex>
                     <label>Coming back To - Optional</label>
-                    <input class="coming-back-place my" ng-model="vm.comingBackLocation" googleplace="" ng-blur="vm.fieldBlurred($event)" placeholder="">
+                    <!--<input class="coming-back-place my" ng-model="vm.comingBackLocation" googleplace="" ng-blur="vm.fieldBlurred($event)" placeholder="">-->
+                   <!-- <input class="coming-back-place my" ng-model="vm.comingBackLocation" ng-change="vm.GetPlace()" ng-blur="vm.fieldBlurred($event)" placeholder="">
+                    <select ng-model ="sourceObj" ng-options="autocompleteValue.formatted_address for autocompleteValue in vm.autocompleteValues">
+                        &lt;!&ndash; <option ng-model="SourceObj" ng-repeat="autocompleteValue1 in sourceAutocompleteValues  ">{{autocompleteValue1.description}}</option>&ndash;&gt;
+                    </select>-->
+                    <md-autocomplete
+                            ng-disabled="true"
+                            md-no-cache="false"
+                            md-selected-item="vm.comingBackLocation.formatted_address"
+                            md-search-text="vm.comingBackLocation"
+                            md-items="item in vm.GetPlace(vm.comingBackLocation)"
+                            md-item-text="item.formatted_address"
+                            placeholder="Coming back To - Optional">
+                        <span md-highlight-text="vm.comingBackLocation">{{item.formatted_address}}</span>
+                    </md-autocomplete>
                 </md-input-container>
                 <md-input-container flex class="coming-back-date-container">
                     <label>Coming back Date - Optional</label>
