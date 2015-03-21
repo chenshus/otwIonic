@@ -4,7 +4,7 @@
         .module('app.post')
         .controller('Post', Post);
 
-    function Post($rootScope,postModal){ //postService?
+    function Post($rootScope,postModal,postService){ //postService?
 
         var vm= this;
         vm.description = "";
@@ -28,6 +28,7 @@
                   'description' : vm.description
                 };
                 $rootScope.$emit('newPost', newPost);
+                postService.PostNewFeed(newPost);
                 vm.closeModal();
             }
         };

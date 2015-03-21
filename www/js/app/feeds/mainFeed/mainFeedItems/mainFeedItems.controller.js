@@ -4,12 +4,18 @@
         .module('app.mainFeedItems')
         .controller('MainFeedItems', MainFeedItems);
 
-    function MainFeedItems($rootScope,Socket) {
+    function MainFeedItems($rootScope,Socket,mainFeedItemsService) {
 
         var vm = this;
         // TODO: needed to be changed - fetch from DB
+
         vm.items = [
         ];
+        mainFeedItemsService.GetFeeds().then(function(data){
+            data.forEach(function(data){
+                vm.items.push(data.Feed_Data);
+        })});
+
 
 
         $rootScope.$on('newCheckIn', function(e, newCheckIn){
@@ -21,7 +27,8 @@
         });
 
         Socket.on('newFeed',function (data){
-            vm.items.push(data.description);
+            vm.items.splice(0, 0, data.description);
+
 
         });
 

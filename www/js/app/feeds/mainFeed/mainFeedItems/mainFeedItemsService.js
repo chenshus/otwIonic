@@ -5,10 +5,10 @@
     'use strict';
     angular.module('app.mainFeedItems')
         .factory("mainFeedItemsService",mainFeedItemsService);
-    mainFeedItemsService.$inject=['$resource','Const','Socket'];
+    mainFeedItemsService.$inject=['$http','Const','Socket'];
 
 
-    function mainFeedItemsService($http,Const,Socket){
+    function mainFeedItemsService($http,Const){
 
         var Server = {
             GetFeeds :GetFeeds
@@ -17,13 +17,14 @@
 
         function GetFeeds (){
 
-            return $http.get(Const.ServerUrl+'GetFeeds')
+            var promise= $http.get(Const.ServerUrl+'GetFeeds')
                 .then(function(data){
-                    console.log("hi lok ar"+data)
+                    return data.data;
                 })
                 .catch(function(message){
                     console.log(message);
-                })
+                });
+            return promise;
             /* var postFeed = $resource(Const.ServerUrl +'newFeed',{
              Feed:newFeed});
 

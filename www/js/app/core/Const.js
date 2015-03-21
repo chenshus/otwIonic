@@ -9,7 +9,7 @@
     function Const(){
 
         var ConstFactory ={
-            ServerUrl : 'http://localhost:3000/'
+            ServerUrl : 'https://frozen-meadow-3938.herokuapp.com/'
         };
         return ConstFactory;
 
