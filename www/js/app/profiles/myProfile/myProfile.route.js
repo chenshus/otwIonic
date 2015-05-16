@@ -21,6 +21,7 @@
                         'menuContent': {
                             templateUrl: "js/app/profiles/myProfile/myProfile.html",
                             controller: 'MyProfile',
+                            controllerAs: 'vm',
                             settings: {
                                 nav: 2
                             }

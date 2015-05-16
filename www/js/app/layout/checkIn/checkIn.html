@@ -7,10 +7,9 @@
 
         <md-content class="md-padding">
             <div layout layout-sm="column">
-                <md-input-container flex>
-                    <label>Check-In at</label>
+
                       <!--  <input   class="checkIn-place my" ng-autocomplete  ng-model="vm.currentLocation" googleplace="" placeholder="" ng-blur="vm.fieldBlurred($event)">-->
-                    <md-autocomplete
+                    <!--<md-autocomplete
                             ng-disabled="true"
                             md-no-cache="false"
                             md-selected-item="vm.currentLocation"
@@ -18,7 +17,27 @@
                             md-items="item in vm.GetPlace(vm.searchCurrentLocationText)"
                             md-item-text="item.formatted_address"
                             placeholder="Check-In at">
-                        <span md-highlight-text="vm.searchCurrentLocationText">{{item.formatted_address}}</span>
+                        <span md-highlight-text="vm.searchCurrentLocationText">{{item.formatted_address}}</span>-->
+
+                <md-input-container >
+                           <label>Check-In at</label>
+
+                                 <input ng-model="vm.currentLocation" ng-change="vm.UpdateSearch(vm.currentLocation)" autocomplete="on" type="text" id="checkin-location" required/>
+                                <select ng-model ="vm.selectedItem" ng-options="autocompleteValue.formatted_address for autocompleteValue in  vm.autocompleteValues">
+                                </select>
+                              <!--<input type="text"   placeholder="Current location"  style='margin-bottom: 100px'>-->
+
+
+         <!--               <div>
+                            <label>Check-In at</label>
+                            <input type="text" ng-change="vm.UpdateSearch(vm.currentLocation)" data-ng-model="vm.currentLocation" list="comicstitle">
+                        </div>
+
+            <datalist id="comicstitle">
+                <option  data-ng-repeat="autocompleteValue in  vm.autocompleteValues" value="{{autocompleteValue.formatted_address}}">
+            </datalist>-->
+
+
                 </md-input-container>
             </div>
             <div layout layout-sm="column">

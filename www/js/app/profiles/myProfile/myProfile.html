@@ -2,10 +2,16 @@
     <ion-content class="has-header">
         <div class="list card">
             <div class="item">
+               {{Username}}
             </div>
             <div class="item item-body">
                 <img src="http://graph.facebook.com/{{userid}}/picture?width=270&height=270"/>
             </div>
+
+            <ion-item ng-repeat="Feed in UserFeeds track by $index" class="item-thumbnail-left">
+                {{ Feed.Description }}
+            </ion-item>
+
         </div>
     </ion-content>
 </ion-view>

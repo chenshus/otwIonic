@@ -11,11 +11,14 @@
                 <h2>You have to perform Login first</h2>
             </div>
 
-            <form ng-submit="doLogin(loginData)" ng-model="loginForm">
+            <form  ng-submit="doLogin(loginData)" name ="loginForm" ng-model="loginForm.$valid">
                 <div class="list">
                     <label class="item item-input">
-                        <span class="input-label">Username</span>
-                        <input type="text" ng-model="loginData.username">
+                        <span class="input-label">Email</span>
+                        <input type="email" name="email"  ng-model="loginData.email" required>
+                         <span style="color:red" ng-show="loginForm.email.$dirty && loginForm.email.$invalid" />
+                        <span ng-show="loginForm.email.$error.required">Email is required.</span>
+                        <span ng-show="loginForm.email.$error.email">Invalid email address.</span>
                     </label>
                     <label class="item item-input">
                         <span class="input-label">Password</span>
@@ -31,6 +34,10 @@
                 <label class="item">
                     <button class="button button-block button-positive" ng-click="fbLogin()">Login with Facebook</button>
                 </label>
+                <label class="item">
+                    <button class="button button-block button-positive" ng-click="register()">Register</button>
+                </label>
+                <label style="color:red" >{{ServerMessage}}</label>
             </div>
         </div>
     </ion-content>

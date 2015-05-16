@@ -4,10 +4,10 @@
         .module('app.post')
         .controller('Post', Post);
 
-    function Post($rootScope,postModal,postService){ //postService?
+    function Post($rootScope,postModal,postService,$localStorage){ //postService?
 
         var vm= this;
-        vm.description = "";
+        vm.Description = "";
 
         vm.fieldBlurred = function($event){
             var currentElement = angular.element($event.target);
@@ -22,10 +22,14 @@
         };
 
         vm.createPost = function(){
-//          postService.PostNewFeed(newPost);
             if(angular.element(document.querySelectorAll('[aria-invalid=true]')).length == 0){
+                var now = new Date();
+
+
                 var newPost = {
-                  'description' : vm.description
+                  'Description' : vm.Description,
+                    'UserId': $localStorage.User.Email,
+                    'Feed_Time' :  now
                 };
                 $rootScope.$emit('newPost', newPost);
                 postService.PostNewFeed(newPost);
@@ -34,7 +38,7 @@
         };
 
         vm.clearFields = function(){
-            vm.description = '';
+            vm.Description = '';
             setTimeout(function() {
                 angular.element(document.querySelectorAll('[class*=description]')).parent().find('div')[0].innerText = '';
             }, 0.10);

@@ -10,6 +10,7 @@
 
         var ConstFactory ={
             ServerUrl : 'https://frozen-meadow-3938.herokuapp.com/'
+            /*ServerUrl : 'http://localhost:3000/'*/
         };
         return ConstFactory;
 

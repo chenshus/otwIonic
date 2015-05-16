@@ -4,14 +4,21 @@
         .module('app.login')
         .controller('Login', Login);
 
-    function Login( $scope, $state, loginService, $cordovaFacebook, $rootScope, $localStorage) {
+    function Login( $scope, $state, loginService, $cordovaFacebook, $rootScope, $localStorage,$ionicPush) {
 
         $scope.userNotLoggedIn = false;
 
         $scope.init = function () {
+
+
+
+
+
+
             var storedLogin = $localStorage.loginCerdinals;
-            if(storedLogin != null && storedLogin != 'undefined' && storedLogin != ''){
-                if(storedLogin.accessToken.length > 0 && storedLogin.userID.length > 0){
+            var userData =$localStorage.User;
+            if((storedLogin != null && storedLogin != 'undefined' && storedLogin != '') ||( userData != null && userData != 'undefined' && userData != '')){
+                if(userData.Username || (storedLogin.accessToken.length > 0 && storedLogin.userID.length > 0 ) ){
                     $state.go('app.myProfile');
                 }
             } else {
@@ -20,9 +27,16 @@
         };
 
         $scope.doLogin = function(loginData) {
-            loginService.SignIn("1");
-            console.log(loginData.username);
-            $state.go('app.myProfile');
+
+            loginService.SignIn(loginData).
+                success(function(data,status){
+                    $localStorage.User =data;
+                    $state.go('app.myProfile');
+                }).
+                error(function(data,status){
+                    $scope.ServerMessage=data;
+                });
+
         };
 
         $scope.fbLogin = function() {
@@ -31,8 +45,14 @@
                     $localStorage.loginCerdinals = success.authResponse;
                     $state.go('app.myProfile');
                 }, function (error) {
-                    $state.go('app.login');
+                    $state.go('login');
                 });
         };
+
+        $scope.register = function (){
+
+            $state.go('register');
+        }
+
     }
 })();

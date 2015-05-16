@@ -16,15 +16,10 @@
         };
         return Service;
 
-        function SignIn (userId){
+        function SignIn (user){
 
-            return $http.post(url+'Sign_In')
-                .then(function(data){
-                    console.log("hi lok ar"+data)
-                })
-                .catch(function(message){
-                    console.log(message);
-                })
+            return $http.post(url+'Sign_In',user);
+
         }
 
     }

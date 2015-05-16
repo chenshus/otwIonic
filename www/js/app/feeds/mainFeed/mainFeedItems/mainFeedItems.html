@@ -1,6 +1,6 @@
 <ion-list>
     <ion-item ng-repeat="item in vm.items track by $index" class="item-thumbnail-left">
-         {{ item }}
+         {{ item.Description }}
         <ion-option-button class="button-positive"
                            ng-click="share(item)">
             Share

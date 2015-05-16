@@ -21,8 +21,12 @@
                 <ion-item ng-repeat="menuItem in menuItems" nav-clear menu-close href="#/app/{{menuItem.shortHref}}">
                     <i class="icon {{menuItem.icon}}"></i>
                     &nbsp; {{menuItem.title}}
-
                     <span ng-if="showNotificationsBadge(menuItem)" class="{{menuItem.notificationsBadgeClass}} badge badge-assertive">0</span>
+                </ion-item>
+                <ion-item ng-click="logout()">
+                    <i class ="icon ion-log-out">
+                        Logout
+                    </i>
                 </ion-item>
             </ion-list>
         </ion-content>

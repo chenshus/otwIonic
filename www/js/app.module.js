@@ -9,9 +9,14 @@
 
     angular.module('app', [
         'ionic',
+        'ngCordova',
+        'ionic.service.core',
+        'ionic.service.push',
+        'ionic.service.deploy',
         'ngResource',
         'blocks.router',
         'app.login',
+        'app.register',
         'app.core',
         'app.myProfile',
         'app.settings',
@@ -27,14 +32,15 @@
         'btford.socket-io',
         'ngCordova.plugins.facebook',
         'ngStorage',
-        'ngMaterial'
+        'ngMaterial',
+        'app.notification'
     ])
 
     .run(function($ionicPlatform){
             $ionicPlatform.ready(function () {
                 // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
                 // for form inputs)
-                if (window.cordova && window.cordova.plugins.Keyboard) {
+                if (window.cordova && window.cordova.plugins) {
                     cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
                 }
                 if (window.StatusBar) {
@@ -44,5 +50,17 @@
 
             })
         })
+
+        .config(['$ionicAppProvider', function($ionicAppProvider) {
+            // Identify app
+            $ionicAppProvider.identify({
+                // The App ID (from apps.ionic.io) for the server
+                app_id: '545a63fe',
+                // The public API key all services will use for this app
+                api_key: '7882bdce7c67c085063aaa4bdf78560d4fb0b17908cc4e50',
+                // The GCM project ID (project number) from your Google Developer Console (un-comment if used)
+                 gcm_id: '1027932218423'
+            });
+        }])
 
 })();

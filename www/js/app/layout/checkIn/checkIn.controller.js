@@ -16,6 +16,7 @@
         vm.searchTextComingBackLocation    = null;
         vm.searchComingBackLocationText =null;
         vm.simulateQuery = false;
+        vm.state ="";
 
         Date.prototype.toDateInputValue = (function() {
             var local = new Date(this);
@@ -26,8 +27,16 @@
         vm.minComingBackDate = new Date().toDateInputValue();
 
 
+       vm.UpdateSearch = function(typed){
+          var newResults = vm.GetPlace(typed);
+            newResults.then(function (data){
+                vm.autocompleteValues =data;
+
+            })
+        };
+
         vm.GetPlace = function(value){
-            var params = {address: value, sensor: false};
+            var params = {address: value, sensor: true ,country : vm.state ,language :"iw" };
             return $http.get('http://maps.googleapis.com/maps/api/geocode/json', {params: params})
                 .then(function(res) {
                     return res.data.results;
@@ -92,18 +101,18 @@
             //reverse geocode the coordinates, returning location information.
             geocoder.geocode({'latLng': latlng}, function (results, status) {
                 var result = results[0];
-                var state = '';
+
 
                 for (var i = 0, len = result.address_components.length; i < len; i++) {
                     var ac = result.address_components[i];
 
                     if (ac.types.indexOf('locality') >= 0) {
-                        state = ac.short_name;
-                        vm.currentLocation = state;
+                        vm.state = ac.long_name;
+                        vm.currentLocation = vm.state;
                     }
                     if (ac.types.indexOf('country') >= 0) {
-                        state = ac.short_name;
-                        vm.currentLocation =  vm.currentLocation +"," +state;
+                        vm.state = ac.long_name;
+                        vm.currentLocation =  vm.currentLocation +"," +vm.state;
                     }
                 }
 

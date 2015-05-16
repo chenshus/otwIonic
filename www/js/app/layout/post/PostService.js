@@ -15,12 +15,7 @@
 
         function PostNewFeed (newFeed){
             Socket.emit('PostNewFeed',newFeed);
-            /* var postFeed = $resource(Const.ServerUrl +'newFeed',{
-             Feed:newFeed});
 
-             postFeed.save(function (data){
-             console.log(data);
-             });*/
         }
     }
 })();

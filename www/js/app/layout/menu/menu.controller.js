@@ -6,7 +6,7 @@
 
 
 
-    function Menu($scope, routerHelper){
+    function Menu($scope, routerHelper,$state,$localStorage){
 
         $scope.menuItems = [
             {"title":"Profile", "stateName":"app.myProfile", "shortHref":"myProfile", "icon":"ion-person", "notificationsBadgeClass":""},
@@ -14,7 +14,9 @@
             {"title":"Customers Requests", "stateName":"app.customersRequests", "shortHref":"customersRequests", "icon":"ion-archive", "notificationsBadgeClass":"customersRequestsNotifications"},
             {"title":"My Requests", "stateName":"app.myRequests", "shortHref":"myRequests", "icon":"ion-paper-airplane", "notificationsBadgeClass":""},
             {"title":"Pending Deals", "stateName":"app.pendingDeals", "shortHref":"pendingDeals", "icon":"ion-unlocked", "notificationsBadgeClass":"pendingDealsNotifications"},
-            {"title":"Settings", "stateName":"app.settings", "shortHref":"settings", "icon":"ion-gear-b", "notificationsBadgeClass":""}
+            {"title":"Settings", "stateName":"app.settings", "shortHref":"settings", "icon":"ion-gear-b", "notificationsBadgeClass":""},
+
+
         ];
 
         var vm = this;
@@ -35,6 +37,12 @@
 
         $scope.showNotificationsBadge = function(menuItem){
             return menuItem.notificationsBadgeClass != "";
+        }
+
+        $scope.logout = function (){
+            $localStorage.User ="";
+            $state.go('login');
+
         }
     }
 
